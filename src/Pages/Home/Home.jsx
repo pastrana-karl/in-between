@@ -85,6 +85,15 @@ export default class Home extends Component {
     }
   }
 
+  //Deduction of points when user loses the round . . . 
+  lose = () => {
+    if(this.state.score === 0){
+      return this.state.score;
+    } else {
+      return this.state.score - 1;
+    }
+  }
+
   // Function that handles the user actions when they choose to deal . . .
   deal = (c1, c2, c3) => {
     if (c1 < c3 && c3 < c2) {
@@ -94,27 +103,27 @@ export default class Home extends Component {
     } else {
       switch (this.state.count) {
         case 1: this.setState({
-          optionRnd1: "Deal", statusRnd1: "LOSE", c1rnd2: Math.floor(Math.random() * 13 + 1), c2rnd2: Math.floor(Math.random() * 13 + 1),
+          score: this.lose(), optionRnd1: "Deal", statusRnd1: "LOSE", c1rnd2: Math.floor(Math.random() * 13 + 1), c2rnd2: Math.floor(Math.random() * 13 + 1),
           c3rnd2: Math.floor(Math.random() * 13 + 1), btn1: "none", btn2: "block", vsb2: "yes",
         }) 
         break;
         case 2: this.setState({
-          optionRnd2: "Deal", statusRnd2: "LOSE", c1rnd3: Math.floor(Math.random() * 13 + 1), c2rnd3: Math.floor(Math.random() * 13 + 1),
+          score: this.lose(), optionRnd2: "Deal", statusRnd2: "LOSE", c1rnd3: Math.floor(Math.random() * 13 + 1), c2rnd3: Math.floor(Math.random() * 13 + 1),
           c3rnd3: Math.floor(Math.random() * 13 + 1), btn2: "none", btn3: "block", vsb3: "yes",
         }) 
         break;
         case 3: this.setState({
-          optionRnd3: "Deal", statusRnd3: "LOSE", c1rnd4: Math.floor(Math.random() * 13 + 1), c2rnd4: Math.floor(Math.random() * 13 + 1),
+          score: this.lose(), optionRnd3: "Deal", statusRnd3: "LOSE", c1rnd4: Math.floor(Math.random() * 13 + 1), c2rnd4: Math.floor(Math.random() * 13 + 1),
           c3rnd4: Math.floor(Math.random() * 13 + 1), btn3: "none", btn4: "block", vsb4: "yes",
         }) 
         break;
         case 4: this.setState({
-          optionRnd4: "Deal", statusRnd4: "LOSE", c1rnd5: Math.floor(Math.random() * 13 + 1), c2rnd5: Math.floor(Math.random() * 13 + 1),
+          score: this.lose(), optionRnd4: "Deal", statusRnd4: "LOSE", c1rnd5: Math.floor(Math.random() * 13 + 1), c2rnd5: Math.floor(Math.random() * 13 + 1),
           c3rnd5: Math.floor(Math.random() * 13 + 1), btn4: "none", btn5: "block", vsb5: "yes",
         }) 
         break;
         case 5: this.setState({
-          optionRnd5: "Deal", statusRnd5: "LOSE", btn5: "none", again: "block",
+          score: this.lose(), optionRnd5: "Deal", statusRnd5: "LOSE", btn5: "none", again: "block",
         }) 
         break;
         default: break;
@@ -175,27 +184,27 @@ export default class Home extends Component {
           } else {
             switch (this.state.count) {
               case 1: this.setState({
-                optionRnd1: "Higher", statusRnd1: "LOSE", c1rnd2: Math.floor(Math.random() * 13 + 1), c2rnd2: Math.floor(Math.random() * 13 + 1),
+                score: this.lose(), optionRnd1: "Higher", statusRnd1: "LOSE", c1rnd2: Math.floor(Math.random() * 13 + 1), c2rnd2: Math.floor(Math.random() * 13 + 1),
                 c3rnd2: Math.floor(Math.random() * 13 + 1), btn1: "none", btn2: "block", vsb2: "yes",
               }) 
               break;
               case 2: this.setState({
-                optionRnd2: "Higher", statusRnd2: "LOSE", c1rnd3: Math.floor(Math.random() * 13 + 1), c2rnd3: Math.floor(Math.random() * 13 + 1),
+                score: this.lose(), optionRnd2: "Higher", statusRnd2: "LOSE", c1rnd3: Math.floor(Math.random() * 13 + 1), c2rnd3: Math.floor(Math.random() * 13 + 1),
                 c3rnd3: Math.floor(Math.random() * 13 + 1), btn2: "none", btn3: "block", vsb3: "yes",
               })
               break;
               case 3: this.setState({
-                optionRnd3: "Higher", statusRnd3: "LOSE", c1rnd4: Math.floor(Math.random() * 13 + 1), c2rnd4: Math.floor(Math.random() * 13 + 1),
+                score: this.lose(), optionRnd3: "Higher", statusRnd3: "LOSE", c1rnd4: Math.floor(Math.random() * 13 + 1), c2rnd4: Math.floor(Math.random() * 13 + 1),
                 c3rnd4: Math.floor(Math.random() * 13 + 1), btn3: "none", btn4: "block", vsb4: "yes",
               }) 
               break;
               case 4: this.setState({
-                optionRnd4: "Higher", statusRnd4: "LOSE", c1rnd5: Math.floor(Math.random() * 13 + 1), c2rnd5: Math.floor(Math.random() * 13 + 1),
+                score: this.lose(), optionRnd4: "Higher", statusRnd4: "LOSE", c1rnd5: Math.floor(Math.random() * 13 + 1), c2rnd5: Math.floor(Math.random() * 13 + 1),
                 c3rnd5: Math.floor(Math.random() * 13 + 1), btn4: "none", btn5: "block", vsb5: "yes",
               }) 
               break;
               case 5: this.setState({
-                optionRnd5: "Higher", statusRnd5: "LOSE", btn5: "none", again: "block",
+                score: this.lose(), optionRnd5: "Higher", statusRnd5: "LOSE", btn5: "none", again: "block",
               }) 
               break;
               default: break;
@@ -233,27 +242,27 @@ export default class Home extends Component {
           } else {
             switch (this.state.count) {
               case 1: this.setState({
-                optionRnd1: "Lower", statusRnd1: "Lose", c1rnd2: Math.floor(Math.random() * 13 + 1), c2rnd2: Math.floor(Math.random() * 13 + 1),
+                score: this.lose(), optionRnd1: "Lower", statusRnd1: "Lose", c1rnd2: Math.floor(Math.random() * 13 + 1), c2rnd2: Math.floor(Math.random() * 13 + 1),
                 c3rnd2: Math.floor(Math.random() * 13 + 1), btn1: "none", btn2: "block", vsb2: "yes",
               }) 
               break;
               case 2: this.setState({
-                optionRnd2: "Lower", statusRnd2: "Lose", c1rnd3: Math.floor(Math.random() * 13 + 1), c2rnd3: Math.floor(Math.random() * 13 + 1),
+                score: this.lose(), optionRnd2: "Lower", statusRnd2: "Lose", c1rnd3: Math.floor(Math.random() * 13 + 1), c2rnd3: Math.floor(Math.random() * 13 + 1),
                 c3rnd3: Math.floor(Math.random() * 13 + 1), btn2: "none", btn3: "block", vsb3: "yes",
               }) 
               break;
               case 3: this.setState({
-                optionRnd3: "Lower", statusRnd3: "Lose", c1rnd4: Math.floor(Math.random() * 13 + 1), c2rnd4: Math.floor(Math.random() * 13 + 1),
+                score: this.lose(), optionRnd3: "Lower", statusRnd3: "Lose", c1rnd4: Math.floor(Math.random() * 13 + 1), c2rnd4: Math.floor(Math.random() * 13 + 1),
                 c3rnd4: Math.floor(Math.random() * 13 + 1), btn3: "none", btn4: "block", vsb4: "yes",
               }) 
               break;
               case 4: this.setState({
-                optionRnd4: "Lower", statusRnd4: "Lose", c1rnd5: Math.floor(Math.random() * 13 + 1), c2rnd5: Math.floor(Math.random() * 13 + 1),
+                score: this.lose(), optionRnd4: "Lower", statusRnd4: "Lose", c1rnd5: Math.floor(Math.random() * 13 + 1), c2rnd5: Math.floor(Math.random() * 13 + 1),
                 c3rnd5: Math.floor(Math.random() * 13 + 1), btn4: "none", btn5: "block", vsb5: "yes",
               }) 
               break;
               case 5: this.setState({
-                optionRnd5: "Lower", statusRnd5: "Lose", btn5: "none", again: "block",
+                score: this.lose(), optionRnd5: "Lower", statusRnd5: "Lose", btn5: "none", again: "block",
               }) 
               break;
               default: break;
@@ -269,6 +278,7 @@ export default class Home extends Component {
     }
   }
 
+  // Function for initiating round 1 . . .
   round1 = () => {
     this.setState({
       count: 2,
@@ -281,6 +291,7 @@ export default class Home extends Component {
     this.option(card1, card2, card3);
   }
 
+  // Function for initiating round 2 . . .
   round2 = () => {
     let card1 = this.state.c1rnd2;
     let card2 = this.state.c2rnd2;
@@ -293,6 +304,7 @@ export default class Home extends Component {
     this.option(card1, card2, card3);
   }
 
+  // Function for initiating round 3 . . .
   round3 = () => {
     let card1 = this.state.c1rnd3;
     let card2 = this.state.c2rnd3;
@@ -305,6 +317,7 @@ export default class Home extends Component {
     this.option(card1, card2, card3);
   }
 
+  // Function for initiating round 4 . . .
   round4 = () => {
     let card1 = this.state.c1rnd4;
     let card2 = this.state.c2rnd4;
@@ -317,6 +330,7 @@ export default class Home extends Component {
     this.option(card1, card2, card3);
   }
 
+  // Function for initiating round 5 . . .
   round5 = () => {
     let card1 = this.state.c1rnd5;
     let card2 = this.state.c2rnd5;
@@ -325,6 +339,7 @@ export default class Home extends Component {
     this.option(card1, card2, card3);
   }
 
+  // Function for refreshing the page to restart the game . . .
   restart = () => {
     window.location.reload(false);
   }
@@ -339,6 +354,7 @@ export default class Home extends Component {
           </div>
 
           <div className = "game">
+            {/* Round 1 */}
             <div className = "round">
               <Round
                 rnd = "1" card1 = { this.state.c1rnd1 } card2 = { this.state.c2rnd1 } card3 = { this.state.c3rnd1 }
@@ -347,6 +363,7 @@ export default class Home extends Component {
               <Button style = {{ display: this.state.btn1 }} onClick = { this.round1 }>PLAY</Button>
             </div>
 
+            {/* Round 2 */}
             <div className = "round">
               <Round
                 rnd = "2" card1 = { this.state.c1rnd2 } card2 = { this.state.c2rnd2 } card3 = { this.state.c3rnd2 }
@@ -355,6 +372,7 @@ export default class Home extends Component {
               <Button style = {{ display: this.state.btn2 }} onClick = { this.round2 }>PLAY</Button>
             </div>
 
+            {/* Round 3 */}
             <div className = "round">
               <Round
                 rnd = "3" card1 = { this.state.c1rnd3 } card2 = { this.state.c2rnd3 } card3 = { this.state.c3rnd3 }
@@ -363,6 +381,7 @@ export default class Home extends Component {
               <Button style = {{ display: this.state.btn3 }} onClick = { this.round3 }>PLAY</Button>
             </div>
 
+            {/* Round 4 */}
             <div className = "round">
               <Round
                 rnd = "4" card1 = { this.state.c1rnd4 } card2 = { this.state.c2rnd4 } card3 = { this.state.c3rnd4 }
@@ -371,6 +390,7 @@ export default class Home extends Component {
               <Button style = {{ display: this.state.btn4 }} onClick = { this.round4 }>PLAY</Button>
             </div>
 
+            {/* Round 5 */}
             <div className = "round">
               <Round
                 rnd = "5" card1 = { this.state.c1rnd5 } card2 = { this.state.c2rnd5 } card3 = { this.state.c3rnd5 }
@@ -380,10 +400,12 @@ export default class Home extends Component {
             </div>
           </div>  
 
+          {/* Displaying the score */}
           <div className = "scores">
             <h3>Total Score: { this.state.score }</h3>
           </div>
 
+          {/* Button for restarting the game */}
           <Button style = {{ display: this.state.again, margin: "0 auto" }} onClick = { this.restart }>AGAIN!</Button>
         </Container>
       </>
