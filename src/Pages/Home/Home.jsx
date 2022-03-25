@@ -6,7 +6,6 @@ import './Home.css';
 export default class Home extends Component {
   // Initialization of the state . . .
 
-
   constructor(props){
     super(props);
 
@@ -359,12 +358,12 @@ export default class Home extends Component {
     return(
       <>
         <Container>
-         <div className='home-title'>
+         <div className = 'home-title'>
            <br/><br/>
-            <p className='title'>Card Game <br/>
+            <p className = 'title'>Card Game <br/>
             In Between</p>
             <h6>Instructions:</h6>
-            <p className='instructions'>
+            <p className = 'instructions'>
                       There will be two (2) numbers that will be drawn before the game starts.
                       All you have to do is to decide whether you are going to Deal or No Deal.
                       Once you Deal with it, the next card will determine your score.
@@ -375,7 +374,9 @@ export default class Home extends Component {
             </p>
         </div>
 
-        <Button style = {{ marginLeft: "40%", display: this.state.btnStr }} onClick = { this.start }>START</Button>
+        <div className = "btn-start">
+          <Button style = {{ display: this.state.btnStr, margin: "0 auto" }} onClick = { this.start }>START</Button>
+        </div>
 
           <div className = "game">
             {/* Round 1 */}
@@ -418,7 +419,7 @@ export default class Home extends Component {
                 option = { this.state.optionRnd4 } status = { this.state.statusRnd4 } visible = { this.state.vsb4 }
               />
               <div className='btn-again'>
-              <Button class style = {{ display: this.state.btn4 }} onClick = { this.round4 }>PLAY</Button>
+              <Button className='a' style = {{ display: this.state.btn4 }} onClick = { this.round4 }>PLAY</Button>
             </div>
             </div>
 

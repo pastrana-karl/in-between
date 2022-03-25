@@ -47,6 +47,9 @@ h3{
     text-shadow: 2px 2px 2px black;
 }
 
+.btn-start {
+    margin-top: 5%;
+}
 
 .btn-again{
     margin-left: 40px;
@@ -54,6 +57,11 @@ h3{
   
 .btn-play-again{
     margin-bottom: 50px;
+}
+
+.home-title h6 {
+    margin-top: 5%;
+    font-size: 34px;
 }
 
 /* 
