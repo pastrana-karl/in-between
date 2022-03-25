@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path = '/' element = {<Home/>} />
+        <Route exact path = '/in-between' element = {<Home/>} />
       </Routes>
     </Router>
   );
