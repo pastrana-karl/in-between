@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/in-between/static/css/main.901e86ad.css",
+    "main.js": "/in-between/static/js/main.f7c80a0f.js",
+    "index.html": "/in-between/index.html",
+    "main.901e86ad.css.map": "/in-between/static/css/main.901e86ad.css.map",
+    "main.f7c80a0f.js.map": "/in-between/static/js/main.f7c80a0f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.901e86ad.css",
+    "static/js/main.f7c80a0f.js"
+  ]
+}
