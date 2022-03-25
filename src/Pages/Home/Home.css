@@ -1,6 +1,32 @@
+*{
+    background-color: black;
+}
+
 .home-title {
-    margin-top: 5%;
     text-align: center;
+    color: white;
+    border-radius: 2px;
+    background-color: black;
+}
+
+.title{
+    font-size: 50px;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h3{
+    color: #b79906;
+    margin-left: 15px;
+}
+
+.instructions{
+    font-size: 25px;
 }
 
 .game {
@@ -14,4 +40,102 @@
 .scores {
     margin-top: 5%;
     text-align: center;
+}
+
+.totalScore{
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+
+.btn-again{
+    margin-left: 40px;
+} 
+  
+.btn-play-again{
+    margin-bottom: 50px;
+}
+
+/* 
+============================================= */
+@media only screen and (max-width: 1000px){
+    
+    .home-title {
+        text-align: center;
+        color: white;
+        border-radius: 2px;
+        background-color: black;
+        font-size: 7px;
+    }
+
+    .title{
+        font-size: 20px;
+    }
+
+    /* .first-start{
+        margin-left: 40%;
+    } */
+
+    p{
+        font-size: 20px;
+    }
+
+    h3{
+        color: #b79906;
+        margin-left: 15px;
+    }
+
+    .home-title h6 {
+        margin-top: 25%;
+    }
+    
+    .instructions{
+        font-size: 15px;
+        padding: 0 5% 5% 5%;
+        text-align: justify;
+    }
+    
+    .game {
+        margin-top: 2%;
+        display: flex;
+        flex-direction: row;
+        gap: 10%;
+        justify-content: center;
+    }
+    
+    .scores {
+        margin-top: 5%;
+        text-align: center;
+    }
+    
+    .totalScore{
+        color: white;
+        text-shadow: 2px 2px 2px black;
+    }
+    
+    
+    .btn-again{
+        margin-top: 10px;
+        margin-left: 0px;
+        font-size: 3px;
+    } 
+      
+    .btn-play-again{
+        margin-bottom: 4px;
+    }
+
+}
+
+@media only screen and (max-width: 400px){
+    .game {
+        display: block;
+    }
+
+    .btn-again{
+        margin-left: 43%;
+    } 
+      
+    .btn-play-again{
+        margin-bottom: 10px;
+    }
 }

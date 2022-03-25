@@ -1,0 +1,69 @@
+
+.cards{
+  border-radius: 10px;
+  box-shadow: white;
+  height: 170px;
+  width: 130px;
+  max-width: 100%;
+  background-color: #b79906;
+  padding-top: 20px;
+  max-height: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.card-front{
+  background-color: #b79906;
+  border-radius: 10px;
+}
+
+.card-back{
+  background-color: b#b79906;
+  border-radius: 10px;
+}
+
+.card-icon{
+  height: 100px;
+  width: 100px;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: #b79906;
+}
+
+h5{
+  background-color: #b79906;
+}
+
+.card-text{
+  font-size: 100%;
+  background-color: #b79906;
+}
+
+/* =============================================*/
+@media only screen and (max-width: 1000px){
+
+  .cards{
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    height: 120px;
+    width:80px;
+    font-size: 10px;
+    margin-left: 40%;
+  }
+
+  .card-text{
+    font-size: 20px;
+    background-color: #b79906;
+  }
+
+  .card-icon{
+    height: 70px;
+    width: 70px;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #b79906;
+  }
+
+}

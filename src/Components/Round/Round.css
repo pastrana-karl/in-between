@@ -1,0 +1,51 @@
+.result{
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;
+    max-width: 100%;
+    background-color: #b79906;
+    color: gold;
+    padding-top: 30px;
+    padding-left: 30px;
+    margin-left: 15px;
+}
+
+.card-result{
+    background-color: #b79906;
+    color: black;
+    font-weight: bolder;
+}
+
+.rounds-number{
+    font-size: 30px;
+    color: #b79906;
+    margin-left: 10px;
+}
+
+/* ============================================= */
+@media only screen and (max-width: 900px){
+
+    .result{
+        height: 70px;
+        width: 70px;
+        max-width: 100%;
+        background-color: #b79906;
+        padding-top:20px;
+        padding-left: 20px;
+        margin-left: 42%;
+    }
+    
+    .card-result{
+        color: white;
+        background-color: #b79906;
+        font-weight: bolder;
+        font-size: 12px;
+    }
+
+    .rounds-number{
+        margin-top: 10%;
+        font-size:30px;
+        color: #b79906;
+        margin-left: 35%;
+    }
+}

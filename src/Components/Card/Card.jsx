@@ -6,9 +6,10 @@ function Card(props) {
   
   return (
     <>
-        <div>
-            <p>{ props.card }</p>
-        </div>
+        <div className='cards'>
+            <img className= 'card-icon' src= "https://res.cloudinary.com/karlstorage/image/upload/v1647855397/free-img/waybvnftlkt2pzjld2hk.png"/>
+                <p className='card-text'>{ props.card }</p>
+              </div>
     </>
   )
 }

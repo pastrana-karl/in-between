@@ -6,6 +6,7 @@ import './Home.css';
 export default class Home extends Component {
   // Initialization of the state . . .
 
+
   constructor(props){
     super(props);
 
@@ -13,8 +14,8 @@ export default class Home extends Component {
       count: 1,
       score: 0,
       again: "none",
-      vsb1: "yes", vsb2: "no", vsb3: "no", vsb4: "no", vsb5: "no",
-      btn1: "block", btn2: "none", btn3: "none", btn4: "none", btn5: "none",
+      vsb1: "no", vsb2: "no", vsb3: "no", vsb4: "no", vsb5: "no",
+      btnStr: "block", btn1: "none", btn2: "none", btn3: "none", btn4: "none", btn5: "none",
       c1rnd1: Math.floor(Math.random() * 13 + 1), c2rnd1: Math.floor(Math.random() * 13 + 1), c3rnd1: Math.floor(Math.random() * 13 + 1), optionRnd1: "", statusRnd1: "",
       c1rnd2: "", c2rnd2: "", c3rnd2: "", optionRnd2: "", statusRnd2: "",
       c1rnd3: "", c2rnd3: "", c3rnd3: "", optionRnd3: "", statusRnd3: "",
@@ -22,6 +23,7 @@ export default class Home extends Component {
       c1rnd5: "", c2rnd5: "", c3rnd5: "", optionRnd5: "", statusRnd5: "",
     }
   }
+ 
 
   // Function for displaying the deal when the user win . . .
   dealWin = () => {
@@ -278,6 +280,15 @@ export default class Home extends Component {
     }
   }
 
+  // Function for initiating round Start . . .
+  start = () => {
+    this.setState({
+      btnStr: 'none',
+      vsb1: 'yes',
+      btn1: 'block',
+    })
+  }
+
   // Function for initiating round 1 . . .
   round1 = () => {
     this.setState({
@@ -348,10 +359,23 @@ export default class Home extends Component {
     return(
       <>
         <Container>
-          <div className = "home-title">
-            <h1>Card Game</h1>
-            <h2>In Between</h2>
-          </div>
+         <div className='home-title'>
+           <br/><br/>
+            <p className='title'>Card Game <br/>
+            In Between</p>
+            <h6>Instructions:</h6>
+            <p className='instructions'>
+                      There will be two (2) numbers that will be drawn before the game starts.
+                      All you have to do is to decide whether you are going to Deal or No Deal.
+                      Once you Deal with it, the next card will determine your score.
+                      If the two randomized number are not identical, and the next card is in between the first two cards, you will gain a point.
+                      But if the two randomized number are identical then you will guess whether the next card is higher or lower.
+                      Then if your guess is right, then you will get a point, otherwise you will lose one point.
+                      On the other hand, if you choose No Deal, then your points will be cut in half.
+            </p>
+        </div>
+
+        <Button style = {{ marginLeft: "40%", display: this.state.btnStr }} onClick = { this.start }>START</Button>
 
           <div className = "game">
             {/* Round 1 */}
@@ -360,7 +384,9 @@ export default class Home extends Component {
                 rnd = "1" card1 = { this.state.c1rnd1 } card2 = { this.state.c2rnd1 } card3 = { this.state.c3rnd1 }
                 option = { this.state.optionRnd1 } status = { this.state.statusRnd1 } visible = { this.state.vsb1 }
               />
-              <Button style = {{ display: this.state.btn1 }} onClick = { this.round1 }>PLAY</Button>
+              <div className='btn-again'>
+              <Button className='a' style = {{ display: this.state.btn1 }} onClick = { this.round1 }>PLAY</Button>
+              </div>
             </div>
 
             {/* Round 2 */}
@@ -369,7 +395,9 @@ export default class Home extends Component {
                 rnd = "2" card1 = { this.state.c1rnd2 } card2 = { this.state.c2rnd2 } card3 = { this.state.c3rnd2 }
                 option = { this.state.optionRnd2 } status = { this.state.statusRnd2 } visible = { this.state.vsb2 }
               />
-              <Button style = {{ display: this.state.btn2 }} onClick = { this.round2 }>PLAY</Button>
+              <div className='btn-again'>
+              <Button className='a' style = {{ display: this.state.btn2 }} onClick = { this.round2 }>PLAY</Button>
+              </div>
             </div>
 
             {/* Round 3 */}
@@ -378,7 +406,9 @@ export default class Home extends Component {
                 rnd = "3" card1 = { this.state.c1rnd3 } card2 = { this.state.c2rnd3 } card3 = { this.state.c3rnd3 }
                 option = { this.state.optionRnd3 } status = { this.state.statusRnd3 } visible = { this.state.vsb3 }
               />
-              <Button style = {{ display: this.state.btn3 }} onClick = { this.round3 }>PLAY</Button>
+              <div className='btn-again'>
+              <Button className='a' style = {{ display: this.state.btn3 }} onClick = { this.round3 }>PLAY</Button>
+              </div>
             </div>
 
             {/* Round 4 */}
@@ -387,7 +417,9 @@ export default class Home extends Component {
                 rnd = "4" card1 = { this.state.c1rnd4 } card2 = { this.state.c2rnd4 } card3 = { this.state.c3rnd4 }
                 option = { this.state.optionRnd4 } status = { this.state.statusRnd4 } visible = { this.state.vsb4 }
               />
-              <Button style = {{ display: this.state.btn4 }} onClick = { this.round4 }>PLAY</Button>
+              <div className='btn-again'>
+              <Button class style = {{ display: this.state.btn4 }} onClick = { this.round4 }>PLAY</Button>
+            </div>
             </div>
 
             {/* Round 5 */}
@@ -396,17 +428,21 @@ export default class Home extends Component {
                 rnd = "5" card1 = { this.state.c1rnd5 } card2 = { this.state.c2rnd5 } card3 = { this.state.c3rnd5 }
                 option = { this.state.optionRnd5 } status = { this.state.statusRnd5 } visible = { this.state.vsb5 }
               />
-              <Button style = {{ display: this.state.btn5 }} onClick = { this.round5 }>PLAY</Button>
+          <div className='btn-again'>
+              <Button className='a' style = {{ display: this.state.btn5 }} onClick = { this.round5 }>PLAY</Button>
+          </div>
             </div>
           </div>  
 
           {/* Displaying the score */}
           <div className = "scores">
-            <h3>Total Score: { this.state.score }</h3>
+            <h3 className='totalScore'>Total Score: { this.state.score }</h3>
           </div>
 
           {/* Button for restarting the game */}
-          <Button style = {{ display: this.state.again, margin: "0 auto" }} onClick = { this.restart }>AGAIN!</Button>
+          <div className='btn-play-again'>
+          <Button className='a' style = {{ display: this.state.again, margin: "0 auto" }} onClick = { this.restart }>AGAIN!</Button>
+          </div>
         </Container>
       </>
     )
